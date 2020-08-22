@@ -1,7 +1,7 @@
 /* eslint-disable camelcase */
 
-export interface EventData {
-  id: number;
+export class Event {
+  id!: number;
   created_by: string;
   stars: number;
   attends: number;
@@ -31,9 +31,8 @@ export interface EventData {
   attendees: number;
   openness: number;
   search_keywords: string;
-}
 
-export interface Tag {
-  id: number;
-  name: string;
+  constructor(props: Partial<Event>) {
+    Object.assign(this, props);
+  }
 }
